@@ -1,38 +1,277 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+/* :root
+{
+
+} */
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    /* height: 100%; */
+    background-color: darkgrey;
+    overflow: auto;
+    /* font-family:; */
+    background-color: rgb(70, 59, 59);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body::-webkit-scrollbar {
+    width: 12px;
+    background-color: transparent;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
 }
 
-.App-link {
-  color: #61dafb;
+.main-body {
+    position: absolute;
+    background-image: url("https://wallpaperaccess.com/full/5651990.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    inset: 0;
+    opacity: 0.4;
+    z-index: -99;
+    padding: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* Navbar */
+
+nav {
+    height: 20%;
+    width: 90%;
+    margin: 0.5em auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav li {
+    font-size: 1.05rem;
+    font-family: "Montserrat", sans-serif;
+    padding: 0 2rem;
+    font-weight: bolder;
+    text-shadow: 0.5px 0.5px rgb(58, 53, 53);
+}
+
+nav li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+nav li a::after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 2.5px;
+    background-color: aliceblue;
+    transition: width 0.3s ease-in;
+    margin-top: 0.15rem;
+}
+
+nav li a:hover::after {
+    width: 100%;
+    transition: width 0.3s ease-out;
+}
+
+
+/* Main-Body Home */
+
+.main-i {
+    display: flex;
+    width: 100%;
+    margin: 4rem auto;
+    z-index: 1;
+}
+
+.main-intro {
+    margin: 0 auto 15rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 10rem 0 0 3rem;
+}
+
+.main-intro p {
+    font-family: "Sora", sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 0.1rem;
+    color: white;
+    word-break: keep-all;
+}
+
+#sec-txt {
+    padding-top: 4rem;
+}
+
+#frt-txt {
+    border-right: 0.15rem solid rgb(192, 189, 183);
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+    overflow: hidden;
+}
+
+#sec-txt #fs {
+    font-family: "Righteous", cursive;
+}
+
+#Letter {
+    font-family: "Lobster", cursive;
+}
+
+.icon-sz {
+    width: 25%;
+    border-radius: 50%;
+    box-shadow: 0.2rem 0.2rem 0.2rem 0.3rem rgba(125, 155, 132, 0.822);
+    margin: 4.5rem;
+    animation: bounce 0.8s infinite alternate;
+    animation-timing-function: linear;
+    height: 100%;
+}
+
+
+/* Responsiveness Landscape*/
+
+@media (max-width: 768px) {
+    nav li {
+        padding: 1rem;
+        font-size: 0.75rem;
+        font-weight: bold;
+    }
+    nav li a::after {
+        height: 1.5px;
+    }
+    .main-i {
+        flex-direction: column;
+        padding: 0.5rem auto;
+        text-align: center;
+        margin: 0.25rem auto;
+        align-items: center;
+    }
+    .main-intro {
+        padding: 4rem 0;
+        margin: 0;
+    }
+    .main-intro p {
+        font-size: 1.25rem;
+    }
+    .icon-sz {
+        margin: auto;
+        width: 30%;
+        height: auto;
+    }
+    #frt-txt,
+    #sec-txt #fs,
+    #Letter {
+        letter-spacing: 0.2rem;
+    }
+    #sec-txt {
+        text-align: center;
+        padding-top: 2rem;
+    }
+    .icon-sz {
+        margin: 1rem auto;
+        width: 28%;
+        height: auto;
+        box-shadow: 0.1rem 0.1rem 0.1rem 0.075rem rgba(125, 155, 132, 0.822);
+    }
+}
+
+
+/* Responsiveness M and M view*/
+
+@media (max-width: 425px) {
+    nav li {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.5rem;
+        font-weight: normal;
+    }
+    nav li a::after {
+        height: 1.125px;
+    }
+    .main-intro {
+        padding: 1rem 0;
+    }
+    .main-intro p {
+        font-size: 0.75rem;
+    }
+    .icon-sz {
+        margin: 1.75rem auto;
+        width: 28%;
+        height: auto;
+        box-shadow: 0.05rem 0.05rem 0.05rem 0.075rem rgba(125, 155, 132, 0.822);
+    }
+    #frt-txt,
+    #sec-txt #fs,
+    #Letter {
+        letter-spacing: 0.1rem;
+    }
+    #sec-txt {
+        text-align: center;
+        padding-top: 1rem;
+    }
+}
+
+
+/* Keyframes */
+
+
+/* JS Bounce */
+
+@keyframes bounce {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+
+/* Typing Effect */
+
+
+/* The typing effect */
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+/* The typewriter cursor effect */
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: rgb(173, 165, 151);
+    }
 }
